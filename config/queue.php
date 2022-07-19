@@ -51,6 +51,14 @@ return [
             'after_commit' => false,
         ],
 
+        'sqs-sns' => [
+            'driver' => 'sqs-sns',
+            'key'    => env('AWS_ACCESS_KEY_ID'),
+            'secret' => env('AWS_SECRET_ACCESS_KEY'),
+            'queue'  => env('SQS_QUEUE', 'your-queue-url'),
+            'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
+        ],
+
         'sqs' => [
             'driver' => 'sqs',
             'key' => env('AWS_ACCESS_KEY_ID'),
