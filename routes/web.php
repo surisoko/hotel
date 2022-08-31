@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/test', function () {
-
+    \App\Events\HotelCreated::dispatch();
 });
 
 Route::get('/', function () {

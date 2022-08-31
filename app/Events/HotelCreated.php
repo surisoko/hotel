@@ -26,6 +26,6 @@ class HotelCreated implements ShouldPublish
 
     public function occurredOn(): int
     {
-
+        return $this->occurredOn;
     }
 }
