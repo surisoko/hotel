@@ -13,7 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/test', function () {
-    \App\Events\HotelCreated::dispatch();
+    \App\Events\BookingCreated::dispatch(
+        'f6c63b78-0673-4c6b-9283-43cd7fcaba88',
+        'foo@fakeemail.com'
+    );
 });
 
 Route::get('/', function () {

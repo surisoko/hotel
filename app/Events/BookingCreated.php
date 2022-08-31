@@ -5,13 +5,16 @@ namespace App\Events;
 use App\Services\PublishEvent\ShouldPublish;
 use Illuminate\Foundation\Events\Dispatchable;
 
-class HotelCreated implements ShouldPublish
+class BookingCreated implements ShouldPublish
 {
     use Dispatchable;
 
     private int $occurredOn;
 
-    public function __construct()
+    public function __construct(
+        private string $hotelId,
+        private string $userEmail
+    )
     {
         $this->occurredOn = time();
     }
@@ -19,8 +22,8 @@ class HotelCreated implements ShouldPublish
     public function toPublisher(): array
     {
         return [
-            'hotel_uuid' => '123123',
-            'user' => 'pepito',
+            'hotel_uuid' => $this->hotelId,
+            'user' => $this->userEmail,
         ];
     }
 
