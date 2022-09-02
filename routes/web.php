@@ -12,14 +12,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/test', function () {
-    \App\Events\BookingCreated::dispatch(
-        'f6c63b78-0673-4c6b-9283-43cd7fcaba88',
-        'foo',
-        'foo@fakeemail.com'
-    );
-});
-
 Route::get('/', function () {
     return view('welcome');
 });
