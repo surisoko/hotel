@@ -7,13 +7,8 @@ use Illuminate\Config\Repository;
 
 class SNSEventPublisher implements EventPublisher
 {
-    private $client;
-    private $config;
-
-    public function __construct(SnsClient $client, Repository $config)
+    public function __construct(private SnsClient $client, private Repository $config)
     {
-        $this->client = $client;
-        $this->config = $config;
     }
 
     public function publish(string $subject, array $payload)
