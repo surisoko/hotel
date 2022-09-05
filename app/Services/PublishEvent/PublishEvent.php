@@ -10,11 +10,8 @@ class PublishEvent implements ShouldQueue
 {
     use InteractsWithQueue;
 
-    private $client;
-
-    public function __construct(EventPublisher $client)
+    public function __construct(private EventPublisher $client)
     {
-        $this->client = $client;
     }
 
     public function handle(ShouldPublish $event)
